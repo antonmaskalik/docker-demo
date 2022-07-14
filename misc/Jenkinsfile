@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'antonmaskalik') {
+     docker.withRegistry('https://hub.docker.com/repositories', 'antonmaskalik') {
        def app = docker.build("antonmaskalik/nodejs:${commit_id}", '.').push()
      }
    }
